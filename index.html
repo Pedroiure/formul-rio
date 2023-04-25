@@ -8,33 +8,71 @@
     <title>Trabalho</title>
 </head>
 <body> 
-<div class="container"> 
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Formulário</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(página atual)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Outras opções
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">Relátorios</a>
+            <a class="dropdown-item" href="#">Gráficos</a> 
+          </div>
+        </li>
+  
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>
+      </form>
+    </div>
+  </nav>
+  <div class="container"> 
+    
+    <form class="form-inline">
+      <input class="form-control mr-sm-2 col-md-6" type="search" placeholder="Buscar" aria-label="Buscar">
+      <button class="btn btn-outline-success my-2 my-sm-2" type="submit">Buscar</button>
+  
+    </form>
+  </nav>
     <h1> Introdução ao bootstrap</h1>
         <form action="">
             <div class="row">
                 <div class="col-md-8">
                     <label for="">Nome:</label> 
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" id="inputnome3">
                 </div>
                 <div class="col-sm-4">
                     <label for="">Data de nascimento:</label>
-                    <input type="date" class="form-control">
+                    <input type="date" class="form-control" id="inputnascimento">
                 </div>
                 <div class="col-md-6">
                 <label for=""> Nome mãe:</label>
-                <input type="text" class="form-control">
+                <input type="text" class="form-control" id="inputnome2">
                 </div>
                 <div class="col-md-6">
                     <label for=""> Nome pai:</label>
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" id="inputnome">
                 </div>
                 <div class="col-md-4">
                     <label for=""> Cidade:</label>
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" id="inputlocalidade">
                 </div>
                 <div class="col-md-4">
                     <label for=""> Curso:</label> 
-                        <select class="form-control">
+                        <select class="form-control" id="inputcurso">
                           <option>Informática</option>
                           <option>Enfermagem</option>
                           <option>Comércio</option>
@@ -48,27 +86,53 @@
                 </div>
                 <div class="col-md-3">
                     <label for=""> Endereço:</label>
-                    <input type="text" class="form-control">
+                    <input type="text"  id= "endereco" class="form-control" id="endereco" >
                 </div>
                 <div class="col-md-3">
                     <label for=""> Complemento:</label>
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" id="inputcomp">
                 </div>
                 <div class="col-md-3">
                     <label for=""> Bairro:</label>
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" id="inputbairro">
                 </div>
                 <div class="col-md-3">
                     <label for=""> CEP:</label>
-                    <input type="text" class="form-control">
-                </div>
+                    <input onblur="buscaCep(this.value)" type="text" class="form-control">  
+                </div> 
+                
             </div>
         </form>
         <br>
-        <button type="submit" class="btn btn-primary">Enviar Dados</button>
+<!-- Botão para acionar modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalExemplo">
+    Enviar dados
+  </button>
+  <!-- Modal -->
+  <div class="modal fade" id="modalExemplo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Usando Modal</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Deseja realmente salvar as informações?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+          <button type="button" class="btn btn-primary">Salvar </button>
+      </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
             <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>        
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>     
+            <script src="script.js"></script>   
 </body>
 </html>
